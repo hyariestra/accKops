@@ -20,7 +20,7 @@
 
                         <ul>
                             <li class="text-center"><img class="img-circle" src="<?php echo base_url("assets/foto_slider/logo.jpg"); ?>"></li>
-                         <em><p class="text-center">copyright ©  2016</p></em>
+                         <em><p class="text-center">copyright ©  2016 tes</p></em>
                           <em><p class="text-center"> <?php echo tampil_pengaturan("nama_web") ?></p></em>
                            <em><p class="text-center">All Rights Reserved.</p></em>
                         </ul>
