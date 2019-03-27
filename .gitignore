@@ -3,6 +3,8 @@
 application/cache/*
 !application/cache/index.html
 
+application/config/*
+
 application/logs/*
 !application/logs/index.html
 
@@ -30,4 +32,3 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /tests/tests/
 /tests/results/
 /css
-/application/config
