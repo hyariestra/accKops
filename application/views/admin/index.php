@@ -54,9 +54,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Logo -->
         <a href="index2.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>A</b>LT</span>
+          <span class="logo-mini">UMY</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Admin</b>LTE</span>
+          <span class="logo-lg">KOPMA UMY</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -305,36 +305,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <li class="active"><a href="<?php echo base_url("admin/Dashboard") ?>"><i class="fa fa-tachometer"></i> <span>Beranda</span></a></li>
 
-            <?php if ($this->session->userdata("pengguna")['level']=="admin"): ?>
-
-              <li><a href="<?php echo base_url("admin/Pelanggan/tampil") ?>"><i class="fa fa-users"></i> <span>Pelanggan</span></a></li>
-              <li class="treeview">
-                <a href="#"><i class="fa fa-bars"></i> <span>Data Master</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-bars"></i> <span>Setup</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="">Informasi Perusahaan</a></li>
+                <li><a href="">Kode Akun (COA)</a></li>
+                <li><a href="">Pengguna</a></li>
+              </ul>
+            </li>
+            <li><a href=""><i class="fa fa-shopping-cart"></i> <span>Jurnal</span></a></li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-bars"></i> <span>Laporan</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                  <li><a href="<?php echo base_url("admin/Kategori/tampil") ?>">Kategori</a></li>
-                  <li><a href="<?php echo base_url("admin/Produk/tampil") ?>">Produk</a></li>
-                  <li><a href="<?php echo base_url("admin/Slider/tampil") ?>">Slider</a></li>
-                  <li><a href="<?php echo base_url("admin/Voucher/tampil") ?>">Voucher</a></li>
-
+                  <li><a href="">Perubahan Ekuitas</a></li>
+                  <li><a href="">Laba Rugi</a></li>
+                  <li><a href="">Neraca</a></li>
+                  <li><a href="">Buku Jurnal</a></li>
+                  <li><a href="">Buku Besar</a></li>
                 </ul>
               </li>
-            <?php endif ?>
-
-            <li><a href="<?php echo base_url("admin/Pembelian/tampil") ?>"><i class="fa fa-shopping-cart"></i> <span>Pembelian</span></a></li>
-            <li><a href="<?php echo base_url("admin/Komentar/tampil") ?>"><i class="fa fa-comments"></i> <span>Komentar</span></a></li>
-
-            <?php if ($this->session->userdata("pengguna")['level']=="admin"): ?>
-
-              <li class="treeview">
-                <a href="#"><i class="fa fa-cog"></i> <span>Pengaturan</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                 <li><a href="<?php echo base_url("admin/Pengaturan/tampil") ?>"><span>Pengaturan Profil Web</span></a></li>
-
-                 <li><a href="<?php echo base_url("admin/Admin/tampil") ?>"><span>Pengaturan Admin</span></a></li>
-                 <li><a href="<?php echo base_url("admin/Halamanstatis/tampil") ?>"><span>Pengaturan Halaman</span></a></li>
-               </ul>
-             </li>
-           <?php endif ?>
 
            <!-- <li><a href="<?php echo base_url("admin/pembelian/laporan") ?>"><i class="fa fa-file"></i> <span>Laporan</span></a></li> -->
 
