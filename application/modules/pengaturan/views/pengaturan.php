@@ -14,20 +14,29 @@
 
 			<div class="box-body">
 
-				
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				
+				<form action="pengaturan_submit" method="get" accept-charset="utf-8">
+					<div class="box box-form-md">
+          <div class="box-header with-border">
+            <h3 class="box-title">Informasi Umum</h3>
+          </div>
+          <div class="box-body">
+            
+            <div class="form-group">
+              <label for="" class="col-sm-4 control-label">Tahun<span style ="color: red"> *</span></label>
+              <div class="col-sm-8">
+                <input type="text" name="tahun" class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+				</form>
+
 
 			</div>
 
 			<div class="box-footer">
 
-				<a href="<?= base_url("admin/pengaturan/tambah") ?>" class="btn btn-primary">Tambah data</a>
+				<a href="<?php echo base_url("admin/pengaturan/tambah") ?>" class="btn btn-primary">Tambah data</a>
 
 				
 
