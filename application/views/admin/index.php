@@ -352,6 +352,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main content -->
         <section class="content">
         
+         <?php echo $this->session->userdata("pesan"); ?>
+
           <!-- Your Page Content Here -->
         <?php echo $konten; ?>
         </section><!-- /.content -->
