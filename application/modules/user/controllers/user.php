@@ -18,6 +18,14 @@ class user extends CI_controller
 
 		parent::__construct();
 
+		if (!$this->session->userdata("pengguna"))
+
+		 {
+
+			$this->load->view("login");
+
+		}
+
 	}
 
 	function index()
@@ -32,6 +40,7 @@ class user extends CI_controller
 
 	function login()
 	{
+
 		$this->load->model("M_pengguna");
 		//skrip login
 		$inputan=$this->input->post();
@@ -46,8 +55,8 @@ class user extends CI_controller
 			$_SESSION['ses_kcfinder']=array();
 			$_SESSION['ses_kcfinder']['disabled'] = false;
 			$_SESSION['ses_kcfinder']['uploadURL'] = "../content_upload";
-			
-			$this->themeadmin->tampilkan("dashboard",$data);
+
+			echo "<script>window.location='".base_url()."main';</script>";
 			
 			}
 			else
@@ -58,6 +67,13 @@ class user extends CI_controller
 			}
 		}
 
+	}
+
+
+	function logout()
+	{
+		$this->session->unset_userdata("pengguna");
+		$this->load->view("login");
 	}
 
 }

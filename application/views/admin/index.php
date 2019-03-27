@@ -276,7 +276,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="<?php echo base_url("admin/Pengguna/logout") ?>" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="<?php echo site_url("user/logout") ?>" class="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>
@@ -338,7 +338,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
            <!-- <li><a href="<?php echo base_url("admin/pembelian/laporan") ?>"><i class="fa fa-file"></i> <span>Laporan</span></a></li> -->
 
-           <li><a href="<?php echo base_url("admin/Pengguna/logout") ?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+           <li><a href="<?php echo site_url("user/logout") ?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
          </ul><!-- /.sidebar-menu -->
        </section>
        <!-- /.sidebar -->
