@@ -308,8 +308,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="treeview">
               <a href="#"><i class="fa fa-bars"></i> <span>Setup</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="">Informasi Perusahaan</a></li>
+                <li><a href="<?php echo base_url().'pengaturan'?>">Informasi Perusahaan</a></li>
                 <li><a href="">Kode Akun (COA)</a></li>
+                <li><a href="">Penandatanganan</a></li>
                 <li><a href="">Pengguna</a></li>
               </ul>
             </li>
