@@ -46,23 +46,21 @@ input{
 
 							<label>Kategori</label>
 
-							<br>
-								<div class="col-md-11">
-									<input type="text" disabled="" id="kategoris" name="kategoris" class="form-control">
-									<input type="hidden"  class="form-control" id="id_kategorinama" name="id_kategori"/>
-								</div>
-								<div class="col-md-1">
-									<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-sm btn-success">
-										<span class="glyphicon glyphicon-plus-sign"></span>
-									</button>
-									
-								</div>
+							<select class="form-control" name="id_kategori">
+
+								<option value="">Pilih Kategori</option>
+
+								<?php foreach ($kategori as $key => $value): ?>
+
+								<option value="<?php echo $value['id_kategori']; ?>"><?php echo $value['nama_kategori']; ?></option>
 
 									
+
+								<?php endforeach ?>
+
+							</select>
 
 						</div>
-
-
 
 						<div class="form-group">
 
@@ -155,44 +153,6 @@ input{
 
 </div>
 
-<div class="modal fade" id="myModal">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title">Kategori</h4>
-			</div>
-			<div class="modal-body">
-				<table class="table" id="tabelku">
-					<thead>
-						<tr>
-							<th>No</th>
-							<th>Nama Kategori</th>
-							<th>Pilih</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach ($kategori as $key => $value) { ?>
-						<tr>
-							<td><?php echo $key+=1; ?><input type="hidden" value="<?php echo $value['id_kategori'] ?>"></td>
-							<td><?php echo $value['nama_kategori']; ?></td>
-							<td>
-								<button onclick="chosecategory(this)" type="button" data-toggle="modal" data-target="#myModal" class="btn btn-sm btn-success">
-									<span class="glyphicon glyphicon-plus-sign"></span>
-								</button>
-							</td>
-						</tr>
-						<?php } ?>
-					</tbody>
-
-				</table>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
 
 
 <script>
@@ -220,15 +180,4 @@ $(document).ready(function() {
         e.preventDefault(); $(this).parent().parent().remove(); x--;
     })
 });
-
-	function chosecategory(obj)
-	{
-		var idpelanggan = $(obj).parent().parent().find("td").eq(0).find("input:first").val();
-		namapelanggan = $(obj).parent().parent().find("td").eq(1).text();
-
-		$("#kategoris").val(namapelanggan);
-		$("#id_kategorinama").val(idpelanggan);
-
-		$("#myModal").modal("remove");
-	}
 </script>

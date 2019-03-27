@@ -46,19 +46,19 @@ input{
 
 							<label>Kategori</label>
 
-							<br>
-								<div class="col-md-11">
-									<input type="text" value="<?php echo $produk['nama_kategori'] ?>" disabled="" id="kategoris" name="kategoris" class="form-control">
-									<input type="hidden" value="<?php echo $produk['id_kategori'] ?>"  class="form-control" id="id_kategorinama" name="id_kategori"/>
-								</div>
-								
-									<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-sm btn-success">
-										<span class="glyphicon glyphicon-plus-sign"></span>
-									</button>
-									
-								
+							<select class="form-control" name="id_kategori">
+
+								<option value="">Pilih Kategori</option>
+
+								<?php foreach ($kategori as $key => $value): ?>
+
+									<option value="<?php echo $value['id_kategori']; ?>" <?php if($value['id_kategori']==$produk['id_kategori']){echo"selected";} ?>><?php echo $value['nama_kategori']; ?></option>
 
 									
+
+								<?php endforeach ?>
+
+							</select>
 
 						</div>
 
@@ -109,8 +109,9 @@ input{
 							<textarea name="keterangan_produk" class="form-control" id="editorku"><?php echo $produk['keterangan_produk']; ?></textarea>
 
 						</div>
-						
-
+						<button type="button" class="btn btn-sm btn-success add_form_field">
+							<span class="glyphicon glyphicon-plus-sign"></span>
+						</button>
 						<?php 
 						for($i = 1;	$i<=4;	$i++)
 						{
@@ -118,31 +119,6 @@ input{
 
 							<?php if ($produk[gambar_produk.$i]==''): ?>
 
-								<div class="container1">
-									<div class="row">
-										<div class="col-md-12">
-
-											<label>Gambar</label>
-
-										</div>
-
-									</div>
-									<div class="form-group">
-										<img src="<?php echo base_url("assets/foto_produk/noimage.jpeg") ?>" width="200">
-									</div>
-
-									<div class="form-group">
-
-
-										<div class="col-md-11">
-											<input type="file" name="gambar_produk<?php echo $i?>" class="form-control">
-										</div>
-										
-
-
-									</div>
-
-								</div>
 
 							<?php else: ?>
 								
@@ -166,10 +142,7 @@ input{
 											<input type="file" name="gambar_produk<?php echo $i?>" class="form-control">
 										</div>
 										<div class="col-md-1">
-											<!-- <button onclick="" class="delete">Delete</button> -->
-											<button onclick="hapusproduk(this,'gambar_produk<?php echo $i?>',<?php echo $produk[id_produk] ?>)" class="delete" type="button">
-									Delete
-								</button>
+											<a href="#" class="delete">Delete</a>
 										</div>
 
 
@@ -284,34 +257,4 @@ input{
 
 		$("#myModal").modal("remove");
 	}
-
-	function hapusproduk(obj,idgambar,idproduk)
-	{	
-		var msg = confirm("Apa anda yakin menghapus data ini?");
-
-	
-
-		if (msg) {
-			var target = "<?php echo site_url("admin/produk/hapusprodukz") ?>";
-
-			data = {
-				idx : idgambar,
-				idy : idproduk
-			}
-			console.log(data);
-
-			$.post(target,data,function(e)
-			{
-				var js = $.parseJSON(e);
-				if (js.flag) {
-					alert('Data Berhasil di hapus');
-				}else{
-					alert('Gagal');
-				}
-					 location.reload();
-			});
-		}
-	}
-
-	
 </script>

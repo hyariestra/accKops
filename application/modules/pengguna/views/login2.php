@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Admin Area BUMDES</title>
+    <title>Admin Area</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -14,12 +14,12 @@
   <body class="hold-transition login-page">
     <div class="login-box">
       <div class="login-logo">
-     
-       <b>Admin</b>Area
+     <img width="200px" src="../theme/images/logobumdes.png">
+    <!--    <b>Admin</b>Area -->
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Login Untuk Masuk ke Dashboard admin</p>
-        <form method="post">
+       <form method="post" action="<?php echo base_url("pengguna/loginX") ?>">
          <?php echo $this->session->userdata("pesan"); ?>
           <div class="form-group has-feedback">
             <input type="email" class="form-control" placeholder="Email" name="email">

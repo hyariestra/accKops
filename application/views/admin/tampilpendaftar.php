@@ -19,14 +19,16 @@
 						<tr>
 
 							<th>No</th>
+							
+							<th>Nama</th>
 
-							<th>Nama Produk</th>
+							<th>Asal Instansi</th>
 
-							<th>Kode Produk</th>
+							<th>Jabatan</th>
 
-							<th>Kategori</th>
+							<th>No Telp</th>
 
-							<th>Aksi</th>
+							<th>Alamat Email</th>
 
 						</tr>
 
@@ -34,7 +36,7 @@
 
 					<tbody>
 
-					<?php foreach ($dataproduk as $key => $value): ?>
+					<?php foreach ($tampilpaketsatu as $key => $value): ?>
 
 						
 
@@ -44,11 +46,13 @@
 
 							<td><?php echo $key+=1; ?></td>
 
-							<td><?php echo $value['nama_produk']; ?></td>
+							<td><?php echo $value['nama']; ?></td>
 
-							<td><?php echo $value['kode_produk']; ?></td>
+							<td><?php echo $value['asal_instansi']; ?></td>
 
-							<td><?php echo $value['nama_kategori']; ?></td>
+							<td><?php echo $value['jabatan']; ?></td>
+							<td><?php echo $value['no_telp']; ?></td>
+							<td><?php echo $value['email']; ?></td>
 
 						
 
@@ -56,9 +60,9 @@
 
 							<!-- <a href="<?php echo base_url("admin/produk/detail/$value[id_produk]") ?>" class="btn btn-info btn-sm">detail</a> -->
 
-							<a href="<?php echo base_url("admin/produk/ubah/$value[id_produk]") ?>" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> ubah</a>
+							<a href="<?php echo base_url("admin/produk/ubah/$value[id_paket_satu]") ?>" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> ubah</a>
 
-							<a href="<?php echo base_url("admin/produk/hapus/$value[id_produk]") ?>" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> hapus</a>
+							<a href="<?php echo base_url("admin/produk/hapus/$value[id_paket_satu]") ?>" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> hapus</a>
 
 						</td>
 

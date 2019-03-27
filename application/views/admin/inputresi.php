@@ -6,7 +6,7 @@ if (!$pembelian):
 
 
 
-echo "<div class='alert alert-danger'>Baelum ada pembayaran untuk pembelian ini</div>";
+echo "<div class='alert alert-danger'>Belum ada pembayaran untuk pembelian ini</div>";
 
 else:
 
