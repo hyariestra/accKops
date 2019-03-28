@@ -24,6 +24,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <link rel="stylesheet" href="<?php echo base_url("template/plugins/datatables/dataTables.bootstrap.css") ?>">
 
+    <!-- jQuery 2.1.4 -->
+    <script src="<?php echo base_url("template/plugins/jQuery/jQuery-2.1.4.min.js") ?>"></script>
 
   </head>
   <!--
@@ -309,7 +311,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a href="#"><i class="fa fa-bars"></i> <span>Setup</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="<?php echo base_url().'pengaturan'?>">Informasi Perusahaan</a></li>
-                <li><a href="">Kode Akun (COA)</a></li>
+                <li><a href="<?php echo base_url().'kodeakun'?>">Kode Akun (COA)</a></li>
                 <li><a href="">Penandatanganan</a></li>
                 <li><a href="">Pengguna</a></li>
               </ul>
@@ -373,9 +375,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div><!-- ./wrapper -->
 
     <!-- REQUIRED JS SCRIPTS -->
-
-    <!-- jQuery 2.1.4 -->
-    <script src="<?php echo base_url("template/plugins/jQuery/jQuery-2.1.4.min.js") ?>"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="<?php echo base_url("template/bootstrap/js/bootstrap.min.js") ?>"></script>
     <!-- AdminLTE App -->
@@ -384,16 +383,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="<?php echo base_url ("template/plugins/datatables/jquery.dataTables.min.js") ?>"></script>
     <script src="<?php echo base_url ("template/plugins/datatables/dataTables.bootstrap.min.js") ?>"></script>
    <script>
-      $(function () {
-        $("#tabelku").DataTable();
+      //$(function () {
+        //$("#tabelku").DataTable();
         // toolbar: 'Full',
         // enterMode : CKEDITOR.ENTER_BR,
         // shiftEnterMode: CKEDITOR.ENTER_P
-      });
+      //});
     </script>
     <script src="<?php echo base_url("template/plugins/ckeditor/ckeditor.js") ?>"></script>
     <script>
-      CKEDITOR.replace("editorku");
+      //CKEDITOR.replace("editorku");
     </script>
 
   </body>

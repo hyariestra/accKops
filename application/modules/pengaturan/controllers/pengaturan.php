@@ -33,7 +33,11 @@ class pengaturan extends CI_Controller
 	{
 		$data['judul'] = 'Halaman Informasi Perusahaan';
 
-		$this->themeadmin->tampilkan('pengaturan',$data);
+		$this->load->model("M_pengaturan");
+
+		$data['informasi']=$this->M_pengaturan->tampilInformasi();
+
+		$this->themeadmin->tampilkan('informasiperusahaan',$data);
 	}
 
 	function tampil()
@@ -54,30 +58,25 @@ class pengaturan extends CI_Controller
 
 
 
-	function tambah()
+	function tambahInformasi()
 
 	{
 
+		parse_str($this->input->post('data'), $data);
+
+		$NamaPerusahaan     = $data['NamaPerusahaan'];
+		$AlamatPerusahaan 	= $data['AlamatPerusahaan'];
+		$KodePos 			= $data['KodePos'];
+		$WebPerusahaan 	    = $data['WebPerusahaan'];
+		$EmailPerusahaan    = $data['EmailPerusahaan'];
+		$NoTelp 	 	 	= $data['NoTelp'];
+		$NoFax  			= $data['NoFax'];
+
 		$this->load->model('M_pengaturan');
 
-		$datainputan = $this->input->post();
+		$json = $this->M_pengaturan->tambahInformasi($NamaPerusahaan, $AlamatPerusahaan, $KodePos, $WebPerusahaan, $EmailPerusahaan, $NoTelp, $NoFax);
 
-	
-
-		if ($datainputan)
-
-		{
-
-			$this->M_pengaturan->simpan_pengaturan($datainputan);
-
-			redirect("pengaturan/tampil");	
-
-		}
-
-		$data['judul']="Tambah Pengaturan";
-
-		$this->themeadmin->tampilkan("tambahpengaturan",$data);
-
+		echo $json;
 
 
 	}
