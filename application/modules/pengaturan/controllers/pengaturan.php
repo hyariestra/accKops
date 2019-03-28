@@ -31,7 +31,7 @@ class pengaturan extends CI_Controller
 
 	function index()
 	{
-		$data['judul'] = 'Halaman Pengaturan';
+		$data['judul'] = 'Halaman Informasi Perusahaan';
 
 		$this->themeadmin->tampilkan('pengaturan',$data);
 	}
