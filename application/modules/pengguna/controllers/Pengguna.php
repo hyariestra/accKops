@@ -19,8 +19,7 @@ class Pengguna extends CI_controller
 			{
 				$isipesan="<br><div class='alert alert-info'>Login sukses</div>";
 			$this->session->set_flashdata("pesan",$isipesan);
-			$this->admin();
-				redirect("");
+			redirect("Dashboard");
 			}
 			else
 			{
